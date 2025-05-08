@@ -25,6 +25,20 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Localizações
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><input class="dropdown-item form-control" type="text" id="filtro" onkeyup="filtrarLocalizacoes()" placeholder="Concelho..."/></li>
+                            <div id="filtroDropdown">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Localizacao" asp-route-coords="bbox=-8.493515253067018%2C40.220559632193776%2C-8.479353189468386%2C40.2277191990068&amp;layer=mapnik&amp;marker=40.22413951018532%2C-8.4864342212677">Leiria</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Localizacao" asp-route-coords="">Pombal</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Localizacao" asp-route-coords="">Tomar</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Localizacao" asp-route-coords="">Castelo Branco</a></li>
+                            </div>
+                        </ul>
+                    </li>
                 </ul>
                 <partial name="_LoginPartial"/>
             </div>
