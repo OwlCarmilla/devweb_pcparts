@@ -23,8 +23,9 @@ public class HomeController : Controller
         return View();
     }
     
-    public IActionResult Inventario()
+    public IActionResult Inventario(int item)
     {
+        ViewData["Item"] = item;
         return View();
     }
 

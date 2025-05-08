@@ -1,8 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var item = (int)(ViewData["Item"] ?? 0);
 }
 
-<div class="text-center">
+
+
+<div class="text-center" xmlns="http://www.w3.org/1999/html">
     <table class="table table-bordered table-striped">
         <thead>
         <tr>
@@ -16,7 +19,11 @@
         </thead>
         <tbody id="myTable">
         <tr>
-            <td>PlacaMãe Micro-ATX B550M PRO-VDH SktAM4 MSI</td>
+            <td>
+                <a asp-controller="Home" asp-action="Inventario" asp-route-item="1">
+                    PlacaMãe Micro-ATX B550M PRO-VDH SktAM4 MSI
+                </a>
+            </td>
             <td>Descrição sucinta do produto</td>
             <td>12345</td>
             <td>99,99</td>
@@ -28,17 +35,55 @@
             </td>
         </tr>
     </table>
+</div>
+
+<nav aria-label="Produto escolhido">
+    <ul class="pagination">
+        <li class="page-item">
+            <a class="page-link" href="#">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+@if(item != 0){ 
     <div class="container card">
+        <div class="row align-content-end">
+            <button class="btn">Ajuda</button>
+        </div>
         <div class="row">
             <div class="col">
-                <img src="" class="img-fluid" alt="Responsive image">
+                <h1>PlacaMãe Micro-ATX B550M PRO-VDH SktAM4 MSI</h1>
+                <div style="width: 200px; height:  200px; background:  gray"></div>
             </div>
             <div class="col">
-
+                <h2>Especificações</h2>
+                <p>
+                    Descrição sucinta do produto. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.<br/>
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.<br/>
+                </p>
             </div>
             <div class="col">
-
+                <h2>Preço</h2>
+                <p>99,99€</p>
+                <h2>Categoria</h2>
+                <p>PlacaMãe</p>
             </div>
         </div>
     </div>
-</div>
+}
